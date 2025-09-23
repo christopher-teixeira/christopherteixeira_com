@@ -9,6 +9,13 @@ first_name: Christopher
 last_name: Teixeira
 highlight_name: true
 
+# Pronouns (optional)
+pronouns: he/him
+
+# Status emoji
+status:
+  icon: 🚀
+
 # Role/position/tagline
 role: Principal Data Scientist
 
@@ -110,7 +117,7 @@ work:
 #   For an email link, use "fas" icon pack, "envelope" icon, and a link in the
 #   form "mailto:your-email@example.com" or "/#contact" for contact widget.
 profiles:
-  - icon: envelope
+  - icon: at-symbol
     url: 'mailto:chris@christopherteixeira.com'
   - icon: academicons/google-scholar
     url: https://scholar.google.com/citations?user=rBKnQG0AAAAJ&hl=en

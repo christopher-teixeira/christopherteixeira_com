@@ -6,7 +6,7 @@ type: landing
 
 design:
   # Default section spacing
-  spacing: "3rem"
+  spacing: "6rem"
 
 sections:
   # - block: resume-biography-3
@@ -16,10 +16,21 @@ sections:
   #     button:
   #       text: Schedule a talk
   #       url: uploads/resume.pdf
-  - block: resume-biography
+  - block: resume-biography-3
     content:
       username: admin
       text: ""
+      headings:
+        about: ""
+        education: ""
+        interests: ""
+    design:
+      # Apply a gradient background
+      css_class: hbx-bg-gradient
+      # Avatar customization
+      avatar:
+        size: medium # Options: small (150px), medium (200px, default), large (320px), xl (400px), xxl (500px)
+        shape: circle # Options: circle (default), square, rounded
       # design:
       #   banner:
       #     # Upload a cover image to `assets/media/` folder and reference its filename here (optional)
