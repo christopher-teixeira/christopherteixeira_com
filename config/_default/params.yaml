@@ -30,7 +30,7 @@ marketing:
 header:
   navbar:
     enable: true
-    blox: "navbar"
+    block: "navbar"
     align: "right"
     fixed_to_top: true
     show_search: true
