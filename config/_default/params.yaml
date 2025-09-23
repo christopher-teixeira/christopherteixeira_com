@@ -6,7 +6,6 @@
 # Appearance
 appearance:
   mode: system
-  # color: color_scheme
   color: sky
 
 # SEO
@@ -36,7 +35,6 @@ header:
     fixed_to_top: true
     show_search: true
     show_theme_chooser: false
-    highlight_active_link: true
     logo:
       text: "Christopher Teixeira"
       filename: "icon.png"
