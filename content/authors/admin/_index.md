@@ -14,7 +14,7 @@ pronouns: he/him
 
 # Status emoji
 status:
-  icon: 🚀
+  icon: 🤔
 
 # Role/position/tagline
 role: Principal Data Scientist
