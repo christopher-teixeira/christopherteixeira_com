@@ -9,6 +9,13 @@ first_name: Christopher
 last_name: Teixeira
 highlight_name: true
 
+# Pronouns (optional)
+pronouns: he/him
+
+# Status emoji
+status:
+  icon: 🤔
+
 # Role/position/tagline
 role: Principal Data Scientist
 
@@ -21,10 +28,14 @@ organizations:
 bio: My interests include using my skills for the public good and playing with baseball data.
 
 # Interests to show in About widget
-# interests:
-#   - Data Analytics
-#   - Applied Statistics
-#   - Operations Research
+interests:
+  - Applied Probability
+  - Data Visualization
+  - Machine Learning
+  - Integer Optimization
+  - Responsible AI
+  - Public Health
+  
 
 # Education to show in About widget
 education:
@@ -110,7 +121,7 @@ work:
 #   For an email link, use "fas" icon pack, "envelope" icon, and a link in the
 #   form "mailto:your-email@example.com" or "/#contact" for contact widget.
 profiles:
-  - icon: envelope
+  - icon: at-symbol
     url: 'mailto:chris@christopherteixeira.com'
   - icon: academicons/google-scholar
     url: https://scholar.google.com/citations?user=rBKnQG0AAAAJ&hl=en
@@ -186,36 +197,36 @@ skills:
       description: ''
       percent: 70
       icon: custom/gauge-high-solid
-  - name: Hobbies
-    # color: '#000f30'
-    # color_border: '#5874B0'
-    color: '#07BEFB'
-    color_border: '#2C3133'
-    items:
-    - name: Hiking
-      description: ''
-      percent: 30
-      icon: custom/person-hiking-solid
-    - name: Dogs
-      description: ''
-      percent: 100
-      icon: custom/dog-solid
-    - name: Baseball
-      description: ''
-      percent: 100
-      icon: custom/baseball-solid
-    - name: Football
-      description: ''
-      percent: 60
-      icon: custom/football-solid
-    - name: Running
-      description: ''
-      percent: 40
-      icon: custom/person-running-solid
-    - name: Video games
-      description: ''
-      percent: 70
-      icon: custom/gamepad-solid
+  # - name: Hobbies
+  #   # color: '#000f30'
+  #   # color_border: '#5874B0'
+  #   color: '#07BEFB'
+  #   color_border: '#2C3133'
+  #   items:
+  #   - name: Hiking
+  #     description: ''
+  #     percent: 30
+  #     icon: custom/person-hiking-solid
+  #   - name: Dogs
+  #     description: ''
+  #     percent: 100
+  #     icon: custom/dog-solid
+  #   - name: Baseball
+  #     description: ''
+  #     percent: 100
+  #     icon: custom/baseball-solid
+  #   - name: Football
+  #     description: ''
+  #     percent: 60
+  #     icon: custom/football-solid
+  #   - name: Running
+  #     description: ''
+  #     percent: 40
+  #     icon: custom/person-running-solid
+  #   - name: Video games
+  #     description: ''
+  #     percent: 70
+  #     icon: custom/gamepad-solid
 
 
 ---

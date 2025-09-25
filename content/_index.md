@@ -16,10 +16,21 @@ sections:
   #     button:
   #       text: Schedule a talk
   #       url: uploads/resume.pdf
-  - block: resume-biography
+  - block: resume-biography-3
     content:
       username: admin
       text: ""
+      headings:
+        about: ""
+        education: ""
+        interests: ""
+    design:
+      # Apply a gradient background
+      # css_class: hbx-bg-gradient
+      # Avatar customization
+      avatar:
+        size: large # Options: small (150px), medium (200px, default), large (320px), xl (400px), xxl (500px)
+        shape: circle # Options: circle (default), square, rounded
       # design:
       #   banner:
       #     # Upload a cover image to `assets/media/` folder and reference its filename here (optional)
@@ -59,12 +70,12 @@ sections:
   #       # - name: this is a name
   #       #   description: this is a description
   #       #   icon: custom/person-chalkboard-solid
-  - block: cta-button-list
-    content:
-      buttons:
-        - text: Schedule a lecture
-          icon: custom/person-chalkboard-solid
-          url: https://calendar.app.google/GjvengVJdwvRCsXL6
+  # - block: cta-button-list
+  #   content:
+  #     buttons:
+  #       - text: Schedule a lecture
+  #         icon: custom/person-chalkboard-solid
+  #         url: https://calendar.app.google/GjvengVJdwvRCsXL6
         # - title: Watch my new YouTube video to achieve 20x productivity
         #   icon: custom/baseball-solid
         #   url: https://youtube.com
