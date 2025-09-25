@@ -6,7 +6,7 @@ type: landing
 
 design:
   # Default section spacing
-  spacing: "6rem"
+  spacing: "3rem"
 
 sections:
   # - block: resume-biography-3
@@ -29,7 +29,7 @@ sections:
       # css_class: hbx-bg-gradient
       # Avatar customization
       avatar:
-        size: medium # Options: small (150px), medium (200px, default), large (320px), xl (400px), xxl (500px)
+        size: large # Options: small (150px), medium (200px, default), large (320px), xl (400px), xxl (500px)
         shape: circle # Options: circle (default), square, rounded
       # design:
       #   banner:
@@ -70,12 +70,12 @@ sections:
   #       # - name: this is a name
   #       #   description: this is a description
   #       #   icon: custom/person-chalkboard-solid
-  - block: cta-button-list
-    content:
-      buttons:
-        - text: Schedule a lecture
-          icon: custom/person-chalkboard-solid
-          url: https://calendar.app.google/GjvengVJdwvRCsXL6
+  # - block: cta-button-list
+  #   content:
+  #     buttons:
+  #       - text: Schedule a lecture
+  #         icon: custom/person-chalkboard-solid
+  #         url: https://calendar.app.google/GjvengVJdwvRCsXL6
         # - title: Watch my new YouTube video to achieve 20x productivity
         #   icon: custom/baseball-solid
         #   url: https://youtube.com
