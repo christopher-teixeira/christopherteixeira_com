@@ -40,7 +40,11 @@ image:
 # url_code: 'https://github.com'
 # url_pdf: ''
 # url_slides: 'https://slideshare.net'
-url_video: 'https://www.youtube.com/watch?v=80IkcJI2hkc'
+# url_video: 'https://www.youtube.com/watch?v=80IkcJI2hkc'
+
+links: 
+  - type: video
+    url: 'https://www.youtube.com/watch?v=80IkcJI2hkc'
 
 slides: ""
 

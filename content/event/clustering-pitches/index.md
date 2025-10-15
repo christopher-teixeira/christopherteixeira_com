@@ -50,10 +50,16 @@ image:
 #   icon: twitter
 
 # Optional filename of your slides within your event's folder or a URL.
-url_slides: "event/clustering-pitches/presentation.html"
-url_code: "event/clustering-pitches/presentation.qmd"
+# url_slides: "event/clustering-pitches/presentation.html"
+# url_code: "event/clustering-pitches/presentation.qmd"
 # url_pdf:
 # url_video:
+
+links: 
+  - type: slides
+    url: "event/clustering-pitches/presentation.html"
+  - type: code
+    url: "event/clustering-pitches/presentation.qmd"
 
 # Markdown Slides (optional).
 #   Associate this event with Markdown slides.

@@ -52,10 +52,15 @@ image:
 #   icon: twitter
 
 # Optional filename of your slides within your event's folder or a URL.
-url_slides: "event/when-machine-learning-fails-dublin/When Machine Learning Fails.html"
-url_code: "event/when-machine-learning-fails-dublin/When Machine Learning Fails.qmd"
+# url_slides: "event/when-machine-learning-fails-dublin/When Machine Learning Fails.html" 
+# url_code: "event/when-machine-learning-fails-dublin/When Machine Learning Fails.qmd"
 # url_pdf:
 # url_video:
+links:
+  - type: slides
+    url: "event/when-machine-learning-fails-dublin/When Machine Learning Fails.html"
+  - type: code
+    url: "event/when-machine-learning-fails-dublin/When Machine Learning Fails.qmd"
 
 # Markdown Slides (optional).
 #   Associate this event with Markdown slides.

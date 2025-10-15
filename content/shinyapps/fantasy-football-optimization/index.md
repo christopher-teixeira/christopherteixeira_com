@@ -15,7 +15,11 @@ categories:
 date: 2021-08-23T22:42:30-04:00
 
 # Optional external URL for project (replaces project detail page).
-external_link: "https://shiny.christopherteixeira.com/FantasyFootballOptimization"
+# external_link: "https://shiny.christopherteixeira.com/FantasyFootballOptimization"
+
+links:
+  - type: site
+    url: "https://shiny.christopherteixeira.com/FantasyFootballOptimization"
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
