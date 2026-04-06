@@ -9,7 +9,7 @@ design:
   spacing: "3rem"
 
 sections:
-  - block: resume-biography-3
+  - block: resume-biography
     content:
       # Choose a user profile to display (a folder name within `content/authors/`)
       username: me
@@ -34,8 +34,16 @@ sections:
 
       # Avatar customization
       avatar:
-        size: large # Options: small (150px), medium (200px, default), large (320px), xl (400px), xxl (500px)
+        size: medium # Options: small (150px), medium (200px, default), large (320px), xl (400px), xxl (500px)
         shape: circle # Options: circle (default), square, rounded
+  - block: resume-experience
+    content:
+      username: me
+      title: "Experience"
+    design: 
+      date_format: 'January 2006'
+      is_education_first: true
+
   # - block: cta-card
   #   content:
   #       title: test
