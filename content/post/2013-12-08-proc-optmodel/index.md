@@ -174,4 +174,4 @@ quit;
 
 Well that was pretty long, but it will provide as the basis for future enhancements and explorations into the problem. You can find the full listing of code below. My next post will explore the log and the results of this program.
 
-{{< gist ct-analytics 2476149aaab59c1e2d0703df52af8351 >}}
+
