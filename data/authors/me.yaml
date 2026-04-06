@@ -21,9 +21,9 @@ bio: |
   leading large-scale technical efforts, and responding to technical proposals and developing relationships with customers. 
   He holds an M.S. in Operations Research from George Mason University and a B.S. in Mathematics from Worcester Polytechnic Institute.
 
-affiliations:
-  - name: Keystone
-    url: https://keystone.ai/
+# affiliations:
+  # - name: Keystone
+  #   url: https://keystone.ai/
 
 links:
   - icon: at-symbol
@@ -53,7 +53,7 @@ education:
       and competitiveness.
     button:
       text: 'Read more'
-      url: 'https://christopherteixeira.com/project/nvss/'
+      url: '/project/other/nvss/'
       icon: hero/document-text
   - degree: BS in Mathematics
     institution: Worcester Polytechnic Institute
@@ -64,13 +64,14 @@ education:
       for defensive production in major league baseball and identify bias in voting for silver slugger awards.
     button:
       text: 'Read more'
-      url: 'https://christopherteixeira.com/project/mqp/'
+      url: '/project/other/mqp/'
       icon: hero/document-text
 
 
 experience:
   - role: Principal Data Scientist
     org: MITRE
+    # icon: custom/Mitre_Corporation_logo
     button: 
       url: tags/mitre/
       text: Related Projects
