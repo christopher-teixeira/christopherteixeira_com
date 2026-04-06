@@ -21,9 +21,10 @@
   publish = "public"
 
 [build.environment]
-  HUGO_VERSION = "0.150.1"
+  HUGO_VERSION = "0.159.2"
   GO_VERSION = "1.21.5"
   NODE_VERSION = "22"
+  PNPM_FLAGS = "--no-frozen-lockfile"
   HUGO_ENABLEGITINFO = "true"
   HUGO_LOG_I18N_WARNINGS = "true"
   HUGO_LOG_WARNINGS = "true"
@@ -38,9 +39,9 @@
     set -e
     echo "=== Deploy Preview Build ==="
     echo "Deploy URL: $DEPLOY_PRIME_URL"
-    pnpm install --verbose
+    pnpm install --verbose --no-frozen-lockfile
     hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL --logLevel debug --printI18nWarnings --printPathWarnings
-    pnpm dlx pagefind --source 'public' --verbose
+    pnpm run pagefind
   """
 
 [context.branch-deploy]
@@ -48,9 +49,9 @@
     set -e
     echo "=== Branch Deploy Build ==="
     echo "Deploy URL: $DEPLOY_PRIME_URL"
-    pnpm install --verbose
+    pnpm install --verbose --no-frozen-lockfile
     hugo --gc --minify -b $DEPLOY_PRIME_URL --logLevel debug --printI18nWarnings --printPathWarnings
-    pnpm dlx pagefind --source 'public' --verbose
+    pnpm run pagefind
   """
 
 [[plugins]]
