@@ -4,7 +4,7 @@
 title: "Retrieval-Augmented Generation (RAG) System for Legislative Text Analysis"
 summary: "I designed and built an end-to-end Retrieval-Augmented Generation (RAG) system to transform raw legislative text into validated, context-aware, and easily visualizable outputs."
 authors: 
-  - admin
+  - me
 tags: 
   - MITRE
 categories: 

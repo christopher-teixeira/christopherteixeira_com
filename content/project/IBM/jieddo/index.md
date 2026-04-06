@@ -4,7 +4,7 @@
 title: "JIEDDO - Operations Research and Systems Analysis Support"
 summary: "Supporting the warfighter with data"
 authors: 
-  - admin
+  - me
 tags: 
   - IBM
 categories: 

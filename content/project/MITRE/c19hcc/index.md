@@ -4,7 +4,7 @@
 title: "COVID-19 Healthcare Coalition"
 summary: "The COVID-19 Healthcare Coalition is a private-sector led response that brings together healthcare organizations, technology firms, nonprofits, academia, and startups to preserve the healthcare delivery system and help protect U.S. populations. Together, we’re working to provide data-driven, real-time insights that improve outcomes."
 authors: 
-  - admin
+  - me
 tags: 
   - MITRE
 categories: 

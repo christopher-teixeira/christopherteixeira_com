@@ -4,7 +4,7 @@
 title: "MLB Player Similarity"
 summary: "Using stats to determine how similar baseball players are to each other."
 authors: 
-  - admin
+  - me
 tags: 
   - Other
 categories: 

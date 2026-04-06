@@ -4,7 +4,7 @@
 title: "Children at Risk Research"
 summary: "Using analytics to determine risk factors associated with child fatalities."
 authors: 
-  - admin
+  - me
 tags: 
   - MITRE
 categories: 

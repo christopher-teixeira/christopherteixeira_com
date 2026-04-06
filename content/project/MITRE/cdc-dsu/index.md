@@ -4,7 +4,7 @@
 title: "Data Science Upskilling for the CDC"
 summary: "As the Project Lead, we supported CDC's efforts in upskilling their staff in a variety of data science competencies from time series regression to data wrangling to communicating your results to all audiences."
 authors: 
-- admin
+- me
 tags: 
 - MITRE
 categories: 

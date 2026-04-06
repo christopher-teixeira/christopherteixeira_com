@@ -4,7 +4,7 @@
 title: "Veteran Benefits Administration Command and Control Model"
 summary: "Understand bottlenecks and other systemic issues to increase system efficiency."
 authors: 
-  - admin
+  - me
 tags: 
   - MITRE
 categories: 

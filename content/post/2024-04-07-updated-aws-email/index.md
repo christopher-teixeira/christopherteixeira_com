@@ -5,7 +5,7 @@ title: "Updating the email forwarding on AWS SES"
 subtitle: ""
 summary: "Swithing from JavaScript to Python for my SES forwarding and setting up for a better spam filter."
 authors: 
-- admin
+- me
 tags: 
 - Other
 categories: 

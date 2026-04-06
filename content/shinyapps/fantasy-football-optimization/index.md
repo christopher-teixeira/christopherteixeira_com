@@ -4,7 +4,7 @@
 title: "Fantasy Football Optimization"
 summary: "A simple shiny application that brings in your fantasy football roster and allows you to simulate a season."
 authors: 
-- admin
+- me
 tags: 
 - Other
 categories: 

@@ -5,7 +5,7 @@ title: "Cost of Hosting a Shiny Server on AWS"
 subtitle: ""
 summary: "After setting up a shiny server, I watched how much it cost and was quite surprised."
 authors: 
-- admin
+- me
 tags: 
 - Other
 categories: 

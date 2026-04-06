@@ -1,0 +1,156 @@
+
+schema: hugoblox/author/v1
+slug: me
+is_owner: true
+name:
+  display: Christopher Teixeira
+  given: Christopher
+  family: Teixeira
+  alternate: ''  # Example: 王伟
+  pronunciation: ''  # Example: Wáng Wěi
+  pronouns: he/him
+postnominals: ''  # Example: PhD, PE
+status:
+  icon: "🤔"
+role: Data Scientist
+bio: |
+  Christopher Teixeira is a Data Scientist with extensive experience applying statistics, applied probability, 
+  and operations research to solve complex organizational challenges. Throughout his career, he has partnered with 
+  diverse stakeholders to drive data-informed decision-making, helping organizations navigate the nuances of various 
+  analytical techniques to find optimal solutions. Christopher has a proven track record of delivering code in multiple languages, 
+  leading large-scale technical efforts, and responding to technical proposals and developing relationships with customers. 
+  He holds an M.S. in Operations Research from George Mason University and a B.S. in Mathematics from Worcester Polytechnic Institute.
+
+affiliations:
+  - name: Keystone
+    url: https://keystone.ai/
+
+links:
+  - icon: at-symbol
+    url: 'mailto:chris@christopherteixeira.com'
+  - icon: academicons/google-scholar
+    url: https://scholar.google.com/citations?user=rBKnQG0AAAAJ&hl=en
+  - icon: brands/github
+    url: https://github.com/christopher-teixeira
+  - icon: brands/linkedin
+    url: https://www.linkedin.com/in/christopherteixeira/
+
+
+interests:
+  - Applied Probability
+  - Data Visualization
+  - Machine Learning
+  - Responsible AI
+
+education:
+  - degree: MS in Operations Research
+    institution: George Mason University
+    date_start: 2008-08-01
+    date_end: 1010-12-31
+    summary: |
+      Concentration in decision analysis. Capstone project working directly for a non-profit creating a software 
+      that optimized team assignments for a local softball league based on historical statistics, player preferances, 
+      and competitiveness.
+    button:
+      text: 'Read more'
+      url: 'https://christopherteixeira.com/project/nvss/'
+      icon: hero/document-text
+  - degree: BS in Mathematics
+    institution: Worcester Polytechnic Institute
+    date_start: 2002-08-01
+    date_end: 2006-05-31
+    summary: |
+      Concentration in applied statistics. Capstone project used play-by-play data to identify a better measure 
+      for defensive production in major league baseball and identify bias in voting for silver slugger awards.
+    button:
+      text: 'Read more'
+      url: 'https://christopherteixeira.com/project/mqp/'
+      icon: hero/document-text
+
+
+experience:
+  - role: Principal Data Scientist
+    org: MITRE
+    button: 
+      url: tags/mitre/
+      text: Related Projects
+    start: 2014-07-01
+    end: 2026-04-02
+    summary: |2-
+      As a Principal Data Scientist at MITRE, I leverage my expertise in data science, statistics, and data management to consult with federal agencies, translating complex challenges into appropriate technical approaches. With over 10 years of experience, I have led technical teams to deliver diverse solutions across multiple FFRDCs, showcasing my skills in technical solutions and communication.
+
+      I am also passionate about driving innovation and cross-disciplinary collaboration. I have developed innovative technical solutions as an individual contributor and technical lead, integrating creativity and vision to drive success. Additionally, I have collaborated with cross-functional teams to implement cutting-edge data science solutions. My education background includes a Master of Science in Operations Research from George Mason University. I am also proficient in Python for Data Science and Computing for Data Analysis.
+  - role: Senior Analytic Consultant
+    org: Epsilon
+    button: 
+      url: tags/epsilon/
+      text: Related Projects
+    start: 2012-08-01
+    end: 2014-06-01
+    summary: |2-
+      I supported multiple clients by using various analytic techniques including but not limited to Optimization, Data Mining, Natural Language Processing, and Machine Learning. These skills are applied through a combination of R, Python, SAS, and Netezza.
+
+      I served as one subject matter experts in the following areas: NLP and text analytics, optimization, and big data solutions. Typical duties include hosting "lunch and learns", providing support on business development efforts, and producing code samples in multiple programming languages.
+  - role: Advanced Analytics Senior Consultant
+    org: IBM
+    button: 
+      url: tags/ibm/
+      text: Related Projects
+    start: 2011-11-01
+    end: 2012-07-01
+    summary: |2-
+      Worked with a team to determine the best use of IBM’s analytical skills to help Aetna improve their business. Modified a SAS multiplicative regression model to be more flexible with data and improve efficiency. Determine the important factors in improving care management efficiency for existing programs at Aetna.
+
+      Supported JIEDDO using various analytical techniques including Analytic Hierarchy Process and Regression Analysis. Created and tested a metric to help support decision making for various groups of people working with JIEDDO. Improved existing products in Excel and Access using SAS code. Created SAS Stored Processes to help streamline report generation. Improved raw data cleansing and formatting using regular expression parsing. Streamlined a process to parse XML files and create new databases from the results. Developed SAS stored processes to support business intelligence and analytics. Designed a database to enhance reporting and help determine an optimal solution to a resource allocation problem.
+  - role: Operations Research Analyst
+    org: SAIC
+    button: 
+      url: tags/saic/
+      text: Related Projects
+    start: 2006-06-01
+    end: 2011-10-01
+    summary: |2-
+      As an Operations Research Analyst, I had the responsibility for taking a list of directions and being able to produce a solution with little to no guidance. This involved working with EXCEL, VBA, SAS, ARENA, and AnyLogic.
+
+      I was responsible for the team of interns. I worked with other SAIC employees to both screen and interview applicants for the Operations Research internships. I provided a list of tasks, providing feedback on work, and supervised the team of interns.
+
+skills:
+  - name: Technology
+    items:
+      - label: Python
+        level: 5
+      - label: R
+        level: 5
+      - label: Tableau
+        level: 4
+      - label: SQL
+        level: 4
+      - label: SAS
+        level: 4
+  - name: Competencies
+    items:
+      - label: Mathematics
+        level: 5
+      - label: Data Science
+        level: 4
+      - label: Statistics
+        level: 4
+      - label: Operations Research
+        level: 4
+      - label: Data Engineering
+        level: 3
+
+# languages:
+#   - name: English
+#     level: 5
+#     label: Native
+#   - name: Spanish
+#     level: 4
+#     label: Fluent
+
+# awards:
+#   - title: Best Paper Award
+#     awarder: NeurIPS
+#     date: "2022-12-01"
+#     summary: Awarded for groundbreaking work on efficient training of large models.
+#     icon: hero/trophy

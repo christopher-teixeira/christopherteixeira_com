@@ -5,7 +5,7 @@ title: "SAS and Optimization"
 subtitle: ""
 summary: "SAS has some great tools for applying traditional constraint programming techniques."
 authors: 
-- admin
+- me
 tags: 
 - Other
 categories: 

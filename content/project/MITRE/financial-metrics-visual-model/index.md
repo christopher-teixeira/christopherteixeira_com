@@ -4,7 +4,7 @@
 title: "Financial Metrics Visual Model"
 summary: "Using simple modeling techniques to understand impact to corporate finances"
 authors: 
-  - admin
+  - me
 tags: 
   - MITRE
 categories: 

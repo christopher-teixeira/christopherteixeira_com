@@ -5,7 +5,7 @@ title: "Simulating a baseball game"
 subtitle: ""
 summary: "Using R and Dynamic Programming to simulate a baseball game."
 authors: 
-- admin
+- me
 tags: 
 - Other
 - MLB

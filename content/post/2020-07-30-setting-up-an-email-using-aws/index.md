@@ -5,7 +5,7 @@ title: "Setting up a personal email address using AWS"
 subtitle: ""
 summary: "It's not straight forward to set up a professional email using AWS and another email client."
 authors: 
-- admin
+- me
 tags: 
 - Other
 categories: 

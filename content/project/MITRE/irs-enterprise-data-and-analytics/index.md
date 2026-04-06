@@ -4,7 +4,7 @@
 title: "Supporting the Internal Revenue Service Enterprise Data & Analytics Governance Program Management Office"
 summary: "Support the IRS by helping them provide an enterprise approach to data and AI governance as well as provide recommendations on aligning investments and activities to an entperise strategy."
 authors: 
-  - admin
+  - me
 tags: 
   - MITRE
 categories: 

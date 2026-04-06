@@ -4,7 +4,7 @@
 title: "Predictive Analytics in Child Welfare"
 summary: "Supporting HHS/ASPE in their efforts to explain the use of predictive analytics to child welfare agencies."
 authors: 
-  - admin
+  - me
 tags: 
   - MITRE
 categories: 

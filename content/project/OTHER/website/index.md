@@ -4,7 +4,7 @@
 title: "Personal Website"
 summary: "Using blogdown to create and host a website on AWS"
 authors: 
-  - admin
+  - me
 tags: 
   - Other
 categories: 

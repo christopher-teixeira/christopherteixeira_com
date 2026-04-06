@@ -5,7 +5,7 @@ title: "Introduction to Similar Players in MLB"
 subtitle: ""
 summary: "An introduction to some thoughts on using data and analytics for determining player similarity in Major League Baseball."
 authors: 
-  - admin
+  - me
 
 tags: 
   - MLB

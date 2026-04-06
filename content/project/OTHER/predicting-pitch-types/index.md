@@ -4,7 +4,7 @@
 title: "Predicting Pitch Types"
 summary: "Predict the next pitch based on pitcher batter histories."
 authors: 
-  - admin
+  - me
 tags: 
   - Other
 categories: 

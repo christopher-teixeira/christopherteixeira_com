@@ -4,7 +4,7 @@
 title: "NASA - Probabilistic Campaign Manifest Analysis Tool"
 summary: "Optimizing allocation of resources to maximize mission success"
 authors: 
-  - admin
+  - me
 tags: 
   - SAIC
 categories: 

@@ -4,7 +4,7 @@
 title: "Strategic Workforce Model"
 summary: "Model workforce dynamics to understand different hiring strategies."
 authors: 
-  - admin
+  - me
 tags: 
   - MITRE
 categories: 

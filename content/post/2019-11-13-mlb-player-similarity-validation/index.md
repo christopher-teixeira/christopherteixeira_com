@@ -5,7 +5,7 @@ title: "MLB Player Similarity - Validation"
 subtitle: ""
 summary: ""
 authors: 
-- admin
+- me
 tags: 
 - MLB
 - Other

@@ -4,7 +4,7 @@
 title: "Similar Players in MLB"
 summary: "Taking a quantitative approach to identify which players are similar to each other."
 authors: 
-  - admin
+  - me
 tags: 
   - MLB
   - Other

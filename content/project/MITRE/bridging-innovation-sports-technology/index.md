@@ -4,7 +4,7 @@
 title: "Bridging Innovation from Sports Technology to the Federal Government"
 summary: "Leading an accelator program to kickstart companies interested in supporting the federal government."
 authors: 
-  - admin
+  - me
 tags: 
   - MITRE
 categories: 

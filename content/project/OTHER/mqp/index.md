@@ -4,7 +4,7 @@
 title: "Statistical Analysis of Defensive Production in Major League Baseball"
 summary: "Using statistics to determine defensive production on play-by-play data."
 authors: 
-  - admin
+  - me
 tags: 
   - WPI
   - Other

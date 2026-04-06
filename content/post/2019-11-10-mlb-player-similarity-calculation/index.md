@@ -5,7 +5,7 @@ title: "MLB Player Similarity - Calculation"
 subtitle: ""
 summary: "An initial look into how to calculate the similarity between two players in Major League Baseball."
 authors: 
-- admin
+- me
 
 tags: 
 - MLB

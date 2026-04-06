@@ -17,7 +17,7 @@ all_day: false
 publishDate: '2025-05-01T13:00:00Z'
 
 authors:
-  - admin
+  - me
 
 tags: 
 - MITRE

@@ -4,7 +4,7 @@
 title: "Sentiment Analysis for specific Brand Products"
 summary: "Translating unstructured text to interpret feelings towards a brand."
 authors: 
-  - admin
+  - me
 tags: 
   - Epsilon
 categories: 

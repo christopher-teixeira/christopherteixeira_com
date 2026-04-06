@@ -5,7 +5,7 @@ title: "Optimization in SAS: Background and Data Prep"
 subtitle: ""
 summary: "In order to use some of the optimization proceedures, you need to process data in a certain way."
 authors: 
-- admin
+- me
 tags: 
 - Other
 categories: 

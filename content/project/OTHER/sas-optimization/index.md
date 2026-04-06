@@ -4,7 +4,7 @@
 title: "Optimization in SAS"
 summary: "This is an overview to optimization and Proc OPTMODEL in SAS. "
 authors: 
-- admin
+- me
 tags: 
 - Other
 categories: 

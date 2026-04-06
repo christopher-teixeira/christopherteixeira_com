@@ -5,7 +5,7 @@ title: "Optimization in SAS: Results"
 subtitle: ""
 summary: "It's time to execute the model and examine the results from proc optmodel."
 authors: 
-- admin
+- me
 tags: 
 - Other
 categories: 

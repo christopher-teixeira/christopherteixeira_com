@@ -23,7 +23,7 @@ all_day: true
 # publishDate: 2022-11-14T00:00:00-05:00
 
 authors: 
-- admin
+- me
 
 tags: 
 - MITRE

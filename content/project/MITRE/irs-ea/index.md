@@ -4,7 +4,7 @@
 title: "Transitioning evolutionary algorithm technology to Internal Revenue Service Enterprise"
 summary: "Support IRS staff with understanding evolutionary algorithms and adapting them for use within their environment."
 authors: 
-  - admin
+  - me
 tags: 
   - MITRE
 categories: 

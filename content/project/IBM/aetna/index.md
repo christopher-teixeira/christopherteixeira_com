@@ -4,7 +4,7 @@
 title: "Aetna"
 summary: "Statistical approach to determining regional based fraud in healthcare claims."
 authors:
-  - admin
+  - me
 
 tags: 
   - IBM

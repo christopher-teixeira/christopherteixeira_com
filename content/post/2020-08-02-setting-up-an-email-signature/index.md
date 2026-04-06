@@ -5,7 +5,7 @@ title: "Setting up an email signature"
 subtitle: ""
 summary: "It takes some consideration to determine what you put into an email signature but there are some great services out there to help."
 authors: 
-- admin
+- me
 tags: 
 - Other
 categories: 

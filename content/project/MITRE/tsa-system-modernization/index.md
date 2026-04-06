@@ -4,7 +4,7 @@
 title: "System Modernization for TSA"
 summary: "As an individual contributor, I helped assess key steps to modernize a complex data engineering and analysis process built in Excel."
 authors: 
-- admin
+- me
 tags: 
 - MITRE
 categories: 

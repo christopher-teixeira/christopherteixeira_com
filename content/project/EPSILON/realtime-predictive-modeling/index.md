@@ -4,7 +4,7 @@
 title: "Real Time Predictive Modeling"
 summary: "Design and implement a model to perform real time predictions."
 authors: 
-  - admin
+  - me
 tags: 
   - Epsilon
 categories: 

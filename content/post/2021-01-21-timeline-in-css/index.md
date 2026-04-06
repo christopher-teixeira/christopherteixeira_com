@@ -5,7 +5,7 @@ title: "Timeline in CSS"
 subtitle: "Creating a timeline "
 summary: ""
 authors: 
-  - admin
+  - me
 tags: 
   - Other
 categories: 

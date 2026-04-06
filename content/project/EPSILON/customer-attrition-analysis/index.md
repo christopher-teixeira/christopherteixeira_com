@@ -4,7 +4,7 @@
 title: "Customer Attrition Analysis"
 summary: "Using machine learning to predict which accounts are likely to be closed."
 authors: 
-  - admin
+  - me
 tags: 
   - Epsilon
 categories: 

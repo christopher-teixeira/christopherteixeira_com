@@ -5,7 +5,7 @@ title: "Optimization in SAS: Proc OPTMODEL"
 subtitle: ""
 summary: "With data, let's formulate our optimization model and get the code ready to execute."
 authors: 
-- admin
+- me
 tags: 
 - Other
 categories: 

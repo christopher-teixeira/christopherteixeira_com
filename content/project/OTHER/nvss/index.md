@@ -4,7 +4,7 @@
 title: "Optimizing Team Assignments"
 summary: "Creating fair and equal softball teams"
 authors: 
-  - admin
+  - me
 tags: 
   - GMU
   - Other

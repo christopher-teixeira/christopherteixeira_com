@@ -5,7 +5,7 @@ title: "Setting up a Shiny Server using only AWS services"
 subtitle: ""
 summary: "My adventures in setting up a shiny server using AWS and hugo. "
 authors: 
-- admin
+- me
 tags: 
 - Other
 categories: 
