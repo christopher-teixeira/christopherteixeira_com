@@ -1,0 +1,18 @@
+hugoblox:
+  meta:
+    format: hugoblox-font@1
+    name: Custom
+    version: 1.0.0
+  families:
+    heading: Montserrat
+    body: Roboto
+    code: Roboto Mono
+  weights:
+    heading:
+      - 400
+      - 700
+    body:
+      - 400
+      - 700
+    code:
+      - 400

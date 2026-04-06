@@ -1,0 +1,37 @@
+hugoblox:
+  meta:
+    format: hugoblox-theme@1
+    name: Christopher Teixeira Custom Theme
+    vendor: hugoblox
+    version: 1.0.0
+    license: MIT
+    description: Blues and greens
+  type: dual
+  light:
+    colors:
+      primary: "#010d26"
+      secondary: "#023373"
+      neutral: "#013440"
+    surfaces:
+      background: "#f2f2f2"
+      foreground: "#010d26"
+      header:
+        background: "#f2f2f2"
+        foreground: "#011c40"
+      footer:
+        background: "#f2f2f2"
+        foreground: "#011c40"
+  dark:
+    colors:
+      primary: "#023373"
+      secondary: "#013440"
+      neutral: "#011c40"
+    surfaces:
+      background: "#414348"
+      foreground: "#f2f2f2"
+      header:
+        background: "#414348"
+        foreground: "#f2f2f2"
+      footer:
+        background: "#414348"
+        foreground: "#f2f2f2"
