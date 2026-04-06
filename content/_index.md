@@ -1,7 +1,7 @@
 ---
 # Leave the homepage title empty to use the site title
 title: ""
-date: 2025-03-29
+date: 2026-04-06
 type: landing
 
 design:
@@ -9,38 +9,33 @@ design:
   spacing: "3rem"
 
 sections:
-  # - block: resume-biography-3
-  #   content:
-  #     username: admin
-  #     text: ""
-  #     button:
-  #       text: Schedule a talk
-  #       url: uploads/resume.pdf
   - block: resume-biography-3
     content:
-      username: admin
-      text: ""
+      # Choose a user profile to display (a folder name within `content/authors/`)
+      username: me
+      text: ''
+      # Show a call-to-action button under your biography? (optional)
+      # button:
+      #   text: Download CV
+      #   url: uploads/resume.pdf
       headings:
-        about: ""
-        education: ""
-        interests: ""
+        about: ''
+        education: ''
+        interests: ''
     design:
-      # Apply a gradient background
-      # css_class: hbx-bg-gradient
+      # Use the new Gradient Mesh which automatically adapts to the selected theme colors
+      background:
+        gradient_mesh:
+          enable: true
+
+      # Name heading sizing to accommodate long or short names
+      name:
+        size: md # Options: xs, sm, md, lg (default), xl
+
       # Avatar customization
       avatar:
         size: large # Options: small (150px), medium (200px, default), large (320px), xl (400px), xxl (500px)
         shape: circle # Options: circle (default), square, rounded
-      # design:
-      #   banner:
-      #     # Upload a cover image to `assets/media/` folder and reference its filename here (optional)
-      #     filename: banner.png
-
-      # button:
-      #   text: Schedule a talk
-      #   # icon: custom/person-chalkboard-solid.svg
-      #   icon: brands/linkedin
-      #   url: https://calendar.app.google/GjvengVJdwvRCsXL6
   # - block: cta-card
   #   content:
   #       title: test
@@ -82,20 +77,52 @@ sections:
         # - title: Connect with me on LinkedIn
         #   icon: brands/linkedin
         #   url: https://linkedin.com
-  - block: resume-skills
+  # - block: resume-skills
+  #   id: skills-old
+  #   content: 
+  #     title: Skills & Hobbies
+  #     username: me
+  #   design:
+  #     show_skill_percentage: true
+  - block: tech-stack
     id: skills
-    content: 
-      title: Skills & Hobbies
-      username: admin
-    design:
-      show_skill_percentage: true
-  - block: resume-experience
-    id: experience
     content:
-      username: admin
-    design: 
-      date_format: 'January 2006'
-      is_education_first: true
+      title: "Tech Stack"
+      subtitle: "Technologies I use to build things"
+      categories: 
+        - name: "Programming Languages"
+          items: 
+            - name: R
+              icon: brands/r
+            - name: Python
+              icon: brands/python
+            - name: SQL
+              icon: hero/circle-stack
+            - name: SAS
+              icon: custom/sas-svgrepo-com
+        - name: "Data Manipulation & Analysis"
+          items:
+            - name: dplyr
+              icon: brands/tidyverse
+            - name: pandas
+              icon: brands/pandas
+            - name: PostgreSQL
+              icon: brands/postgresql
+            - name: Neo4J
+              icon: brands/neo4j
+        - name: "Data Visualization"
+          items: 
+            - name: ggplot2
+              icon: brands/tidyverse
+            - name: Shiny
+              icon: brands/tidyverse
+            - name: Streamlit
+              icon: brands/streamlit
+            - name: Plotly
+              icon: brands/plotly
+            - name: Tableau
+              icon: brands/tableau
+
   - block: collection
     id: posts
     content:
@@ -103,7 +130,7 @@ sections:
       subtitle: ''
       text: ''
       page_type: post
-      count: 3
+      count: 4
       filters:
         folders:
           - post
@@ -117,32 +144,65 @@ sections:
       sort_ascending: false
     design:
       # Choose a layout view
-      view: date-title-summary
-      # view: article-grid
+      # view: date-title-summary
+      view: article-grid
       # Reduce spacing
-      spacing:
-        padding: [0, 0, 0, 0]
-  - block: collection
-    id: projects
+      # spacing:
+      #   padding: [0, 0, 0, 0]
+  # - block: collection
+  #   id: projects
+  #   content:
+  #     title: Projects
+  #     subtitle: ''
+  #     text: 'This list of projects represents the details of my experience across my career and how I supported customers’ decision making on complex challenges.'
+  #     count: 6
+  #     filters:
+  #       folders:
+  #         - project
+  #       author: ''
+  #       category: ''
+  #       tag: ''
+  #       publication_type: ''
+  #       featured_only: false
+  #     offset: 0
+  #     sort_by: 'Date'
+  #     sort_ascending: false
+  #   design:
+  #     view: article-grid
+  #     columns: 3
+
+  - block: portfolio
+    id: portfolio
     content:
-      title: Projects
-      subtitle: ''
-      text: 'This list of projects represents the details of my experience across my career and how I supported customers’ decision making on complex challenges.'
+      title: "Projects"
+      subtitle: "This list of projects represents the details of my experience across my career and how I supported customers’ decision making on complex challenges."
       count: 6
       filters:
         folders:
-          - project
-        author: ''
-        category: ''
-        tag: ''
-        publication_type: ''
-        featured_only: false
-      offset: 0
-      sort_by: 'Date'
-      sort_ascending: false
+          - project  # Or: research, portfolio, work, teaching, etc.
+      buttons:
+        - name: All
+          tag: '*'
+        - name: MITRE
+          tag: MITRE
+        - name: Epsilon
+          tag: Epsilon
+        - name: IBM
+          tag: IBM
+        - name: SAIC
+          tag: SAIC
+        - name: Other
+          tag: Other
+      default_button_index: 0
+      archive:
+        # Auto-shown if more items exist than displayed
+        # Optionally customize:
+        # enable: false  # Explicitly hide
+        # link: "/work/"  # Custom URL
+        # text: "Browse All"  # Custom text
     design:
-      view: article-grid
       columns: 3
+      fallback_icon: code-bracket  # Or: academic-cap, paint-brush, camera, etc.
       
   - block: collection
     id: talks
@@ -152,7 +212,7 @@ sections:
         folders:
           - event
     design:
-      view: date-title-summary
+      view: card
       columns: 1
   # - block: stats
   #   id: stats
