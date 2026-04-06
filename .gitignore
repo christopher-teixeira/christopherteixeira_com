@@ -1,19 +1,69 @@
-# IDEs
-.idea/
-*.Rhistory
+# ============================================================================
+# Hugo Site .gitignore
+# ============================================================================
 
-# Hugo
-resources/
+# ============================================================================
+# Hugo Build Artifacts
+# ============================================================================
+
+# Generated site output
 public/
-jsconfig.json
-node_modules/
-go.sum
+
+# Hugo resources (processed assets)
+resources/
+
+# Hugo build lock
 .hugo_build.lock
+
+# Hugo stats
 hugo_stats.json
 
-# OS
+# Auto-generated JS config
+**/assets/jsconfig.json
+
+# ============================================================================
+# Node.js & Package Managers
+# ============================================================================
+
+# Dependencies
+node_modules/
+
+# ============================================================================
+# Environment & Configuration
+# ============================================================================
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# ============================================================================
+# Generated Content
+# ============================================================================
+
+# Pagefind search index
+pagefind/
+static/pagefind/
+
+# ============================================================================
+# Operating System
+# ============================================================================
+
+# macOS
 .DS_Store
-.Rproj.user
+.DS_Store?
+._*
 
-hugo_stats.json
-hugo_stats.json
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# ============================================================================
+# Logs & Temporary Files
+# ============================================================================
+
+*.log
+npm-debug.log*
