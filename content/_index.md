@@ -26,7 +26,7 @@ sections:
       # Use the new Gradient Mesh which automatically adapts to the selected theme colors
       background:
         gradient_mesh:
-          enable: true
+          enable: false
 
       # Name heading sizing to accommodate long or short names
       name:
@@ -102,34 +102,50 @@ sections:
           items: 
             - name: R
               icon: brands/r
+              level: expert
             - name: Python
               icon: brands/python
+              level: advanced
             - name: SQL
               icon: hero/circle-stack
+              level: expert
             - name: SAS
               icon: custom/sas-svgrepo-com
+              level: intermediate
         - name: "Data Manipulation & Analysis"
           items:
             - name: dplyr
               icon: brands/tidyverse
+              level: expert
             - name: pandas
               icon: brands/pandas
+              level: advanced
             - name: PostgreSQL
               icon: brands/postgresql
+              level: advanced
             - name: Neo4J
               icon: brands/neo4j
+              level: intermediate
         - name: "Data Visualization"
           items: 
             - name: ggplot2
               icon: brands/tidyverse
+              level: expert
             - name: Shiny
               icon: brands/tidyverse
+              level: advanced
             - name: Streamlit
               icon: brands/streamlit
+              level: intermediate
             - name: Plotly
               icon: brands/plotly
+              level: intermediate
             - name: Tableau
               icon: brands/tableau
+              level: expert
+    design: 
+      show_levels: false
+      # levels are 'expert', 'advanced', 'intermediate', 'beginner'
 
   - block: collection
     id: posts
