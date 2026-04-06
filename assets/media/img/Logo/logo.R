@@ -8,9 +8,9 @@ alpha <- 2
 phi <- (sqrt(5)+1)/2
 
 colors <- data.frame(
-  dots="#212529",
-  letters="#0088CC",
-  background="#000000"
+  dots="#ccc",
+  letters="#001b3d",
+  background="#fff"
 )
 
 radius <- function(k,n,b){
@@ -47,7 +47,7 @@ logo <- logo.dots %>%
   
 ggplot(logo,aes(x=x,y=y,color=color)) + 
   geom_point() +
-  scale_color_manual(values=c("#0088CC","#212529")) +
+  scale_color_manual(values=c(colors$letters,colors$dots)) +
   theme(
         panel.background = element_rect(fill="transparent",
                                         color=NA),
