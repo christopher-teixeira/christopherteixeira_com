@@ -1,0 +1,636 @@
+---
+engine: knitr
+format:
+    revealjs:
+        # logo: img/https___comm.mitre.org_strategiccommunications_wp-content_uploads_sites_170_2020_01_MITRE_logos_Base.svg
+        logo: img/icon.png
+        footer: © 2026 Christopher Teixeira. All rights reserved.
+        theme: cteixeira_theme.scss
+        width: 1350
+        self-contained: true
+        preload-iframes: true
+        preview-links: true
+        disable-layout: false
+        code-fold: show
+        code-overflow: wrap
+        code-copy: hover
+        output-location: column
+        scrollable: true
+
+---
+
+# <span id="titleslideh1">Working with Messy Data</span> {background-image="img/Blank with website.png" background-size="contain" background-position="center" background-repeat="no-repeat"}
+
+<span id="titlename">Christopher Teixeira</span><br>
+<span id="presentation-date">April 10, 2026</span>
+
+## A little about me... {.smaller}
+
+<br><br>
+
+:::: {.columns}
+
+::: {.column width="70%"}
+<br>
+
+### Christopher Teixeira {.name}
+#### Data Scientist {.name}
+
+<br><br>
+
+:::
+
+::: {.column width="30%"}
+
+#### Interests {.name}
+
+- Applied Probability
+- Data Visualization
+- Machine Learning
+- Responsible AI
+
+:::
+::::
+
+```{mermaid}
+---
+displayMode: ""
+---
+gantt
+    title Professional Timeline
+    dateFormat  YYYY-MM
+    axisFormat %Y
+    todayMarker off
+    section Education
+    WPI (BS Mathematics):a1, 2002-09, 2006-06
+    GMU (MS Operations Research):a2, 2008-08, 2010-12
+    section Experience
+    SAIC                    :b1, 2006-06, 2010-11
+    IBM                     :b2, 2010-11, 2012-08
+    Epsilon                 :b3, 2012-08, 2014-07
+    MITRE                   :b4, 2014-07, 2026-04
+    To be Announced :active, b5, 2026-04, 2028-12
+```
+
+## Setup {visibility="hidden"}
+
+```{r}
+#| label: setup
+
+# Load R libraries needed for this presentation.
+library(tidyverse)
+library(jsonlite)
+library(ggplot2)
+library(ggExtra)
+library(knitr)
+library(scales)
+library(qrcode)
+library(baseballr)
+library(reticulate)
+
+# Install Python packages if not already installed.
+py_require(c("pybaseball","pandas","pyskim","scikit-learn","itables",'seaborn','matplotlib'))
+
+# Baseball data from:
+# https://baseballsavant.mlb.com/statcast_search/csv?all=true&hfPT=&hfAB=&hfBBT=&hfPR=&hfZ=&stadium=&hfBBL=&hfNewZones=&hfGT=R%7CPO%7CS%7C&hfC&hfSea=2025%7C&hfSit=&hfOuts=&opponent=&pitcher_throws=&batter_stands=&hfSA=&player_type=batter&hfInfield=&team=&position=&hfOutfield=&hfRO=&home_road=&game_date_gt=2025-05-01&game_date_lt=2025-05-07&hfFlag=&hfPull=&metric_1=&hfInn=&min_pitches=0&min_results=0&group_by=name&sort_col=pitches&player_event_sort=h_launch_speed&sort_order=desc&min_abs=0&type=details
+```
+
+## Reading in data {.smaller}
+
+::: {.panel-tabset}
+
+### R
+
+```{r}
+#| label: r_readdata
+#| echo: true
+#| code-overflow: wrap
+
+# baseballr provides functions for accessing baseball data, including 
+#   the statcast_search function which allows you to access Statcast data from MLB.
+
+# More info can be found here: https://baseballr.com/reference/statcast_search/
+
+library(baseballr)
+
+# Download a week of batting data from Statcast.
+df <- statcast_search(
+  start_date = "2025-05-01", 
+  end_date = "2025-05-07", 
+  player_type = "batter"
+)
+
+# View the data frame in a friendly format for Quarto
+knitr::kable(head(df), format="html")
+
+```
+
+### Python
+
+```{python}
+#| label: python_readdata
+#| python.reticulate: true
+#| eval: false
+#| echo: true
+
+# pybaseball provides functions for accessing baseball data, including 
+#   the statcast function which allows you to access Statcast data from MLB.
+
+# More info can be found here: https://baseballr.com/reference/statcast_search/
+
+import pybaseball as pb
+import pandas as pd
+
+df = pb.statcast(
+    start_dt="2025-05-01", 
+    end_dt="2025-05-07",
+    verbose=False
+) 
+# View the data frame in a friendly format for Quarto
+print(df.head().to_markdown(index=False))
+``` 
+
+```{python}
+#| echo: false
+#| output: false
+
+# This block is for execution only.
+import pybaseball as pb
+import pandas as pd
+
+df = pb.statcast(
+    start_dt="2025-05-01", 
+    end_dt="2025-05-07",
+    verbose=False
+) 
+
+```
+
+```{python}
+#| output: asis
+#| echo: false
+
+# This block is for execution only.
+print(df.head().to_markdown(index=False))
+```
+
+
+:::
+
+## Changing data types {.smaller}
+
+::: {.panel-tabset}
+
+### R
+
+```{r}
+#| label: r_datatypes
+#| echo: true
+
+# Subset the data down to a select few to work with. 
+# Then convert player_name and description variables to factors. 
+df.subset <- df |> 
+  select(player_name, 
+          launch_speed, 
+          launch_angle, 
+          launch_speed_angle, 
+          description) |>
+  mutate(across(c(player_name,description), factor))
+
+# View the data frame in a friendly format for Quarto
+knitr::kable(head(df.subset), format="html")
+```
+
+### Python
+
+```{python}
+#| label: python_datatypes
+#| python.reticulate: true
+#| eval: false
+#| echo: true
+
+# Subset the data down to a select few to work with. 
+# Then convert player_name and description variables to categorical variables. 
+df_subset = df[['player_name', 'description', 'launch_speed', 'launch_angle', 'launch_speed_angle']].copy()
+categorical_cols = ["player_name","description"]
+df_subset[categorical_cols]=df_subset[categorical_cols].apply(pd.Categorical)
+
+```
+
+```{python}
+#| output: asis
+#| echo: false
+
+# This block is for execution only.
+df_subset = df[['player_name', 'description', 'launch_speed', 'launch_angle', 'launch_speed_angle']].copy().reset_index(drop=True)
+categorical_cols = ["player_name","description"]
+df_subset[categorical_cols]=df_subset[categorical_cols].apply(pd.Categorical)
+print(df_subset.head().to_markdown(index=False))
+```
+
+:::
+
+## Exploratory data analysis {.smaller}
+
+Exploratory data analysis (EDA) is used by data scientists to analyze and investigate data sets and summarize their main characteristics, often employing data visualization methods. It helps determine how best to manipulate data sources to get the answers you need, making it easier for data scientists to discover patterns, spot anomalies, test a hypothesis, or check assumptions.^[[IBM What is exploratory data analysis?](https://www.ibm.com/topics/exploratory-data-analysis)]
+
+<br>
+
+Four primary types of EDA:
+
+1. **Univariate non-graphical**: Describe the data and find patterns that exist within a variable.
+2. **Univariate graphical**: For a single variable, explore the values visaully using graphs like box plots or histograms.
+3. **Multivariate nongraphical**: Describe the relationships between two or more variables in the data. 
+4. **Multivariate graphical**: Visualize the relationships between two or more variables through graphs like scatter plots or heat maps, 
+
+## Applying EDA: Univariate {.smaller}
+
+::: {.panel-tabset}
+
+### R
+
+```{r}
+#| label: r_eda_univariate
+#| echo: true
+
+# Use the skimr package to examine the dataset. 
+# Produces a high level summary (# of rows/columns, column types)
+# For each column type, it produces details about each variable.
+
+library(skimr)
+skim(df.subset)
+
+```
+
+### Python
+
+```{python}
+#| label: python_eda_univariate
+#| python.reticulate: true
+#| eval: true
+#| echo: true
+
+# Use the pyskim package to examine the dataset. 
+# Produces a high level summary (# of rows/columns, column types)
+# For each column type, it produces details about each variable.
+
+from pyskim import skim
+skim(df_subset)
+
+```
+
+:::
+
+## Applying EDA: Multivariate {.smaller}
+
+::::: {.panel-tabset}
+
+### R
+
+```{r}
+#| label: r_eda_multivariate
+#| echo: true
+#| fig-height: 7
+
+library(ggplot2)
+library(ggExtra)
+library(ggthemes)
+
+# Create a scatter plot with the launch speed and launch angle.
+g <- ggplot(df.subset |>
+              filter(description=="hit_into_play"), 
+            aes(x=launch_speed, 
+                y=launch_angle)) + 
+  geom_point() +
+  theme(legend.position="none") +
+  labs(x="Launch Speed",
+       y="Launch Angle") +
+  scale_x_continuous(labels=label_number(scale_cut=cut_short_scale())) +
+  scale_y_continuous(labels=label_number(scale_cut=cut_short_scale())) +
+  theme_hc()
+
+ggMarginal(g, type="histogram")
+
+```
+
+### Python
+
+:::: {.columns}
+::: {.column width="50%"}
+```{python}
+#| eval: false
+#| echo: true
+#| results: false
+#| warning: false
+#| message: false
+#| output: false
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Create a scatter plot with the launch speed and launch angle.
+g = sns.jointplot(
+  data=df_subset,
+  x='launch_speed',
+  y='launch_angle',
+  kind='scatter')
+g.set_axis_labels("Launch Speed", "Launch Angle")
+
+plt.show()
+
+```
+:::
+
+::: {.column width="50%"}
+```{python}
+#| eval: true
+#| echo: false
+#| results: false
+#| warning: false
+#| message: false
+
+# This block is for execution only.
+import seaborn as sns
+import matplotlib.pyplot as plt
+g = sns.jointplot(x=df_subset['launch_speed'],
+                  y=df_subset['launch_angle'],
+                  kind='scatter')
+g.set_axis_labels("Launch Speed", "Launch Angle")
+plt.show()
+```
+:::
+::::
+:::::
+
+
+# Working with missing data
+
+## Questions to ask when working with missing data
+
+::: {.incremental id="small-bullets"}
+- Does "missing" mean something different from "0"?
+  - If you have data on the amount of candy sold per day, does a missing value mean no candy was sold? or the amount of candy sold is unknown? 
+- Is "missing" captured in another way? 
+  - Sometimes negative values or "99" can imply a value is missing. 
+- Was there a change in how data was being captured?
+  - For long standing data capture initiatives (e.g., surveys), the data collection methods can change without notice to the analysts.
+    - Was the way data was being capture changed? 
+    - Did the range of values change? 
+    - Do the values represent something different?
+- Does it make sense to replace missing values?
+  - If a variable is mostly missing, replacing it with any method could lead false conclusions.
+
+:::
+
+## Imputing missing data 
+
+There are two general approaches:
+
+::: {.incremental}
+
+- **Overly simple approach**: replace missing values with mean, median, or mode
+- **Sophisticated approach**: replacing missing values by analyzing the full dataset and building a model per variable with missing data
+
+:::
+
+## Multivariate Imputation by Chained Equations (MICE)
+
+::: {.panel-tabset}
+
+### R
+
+```{r}
+#| label: r_mice
+#| echo: true
+#| eval: true
+#| message: false
+#| warning: false
+
+library(mice)
+
+# Filter down to balls put in play that should have values.
+df.to.impute <- df.subset |> filter(description=="hit_into_play")
+
+# Impute missing data using predictive mean matching
+imputed <- df.to.impute |>
+    mice(m=1, maxit=10, seed=42, method="pmm", print=FALSE)
+
+# Show the complete dataset including imputed values
+complete(imputed) |> 
+  head() |> 
+  knitr::kable(format="html")
+
+```
+
+### Python
+
+```{python}
+#| label: python_mice
+#| eval: true
+#| echo: true
+#| output: asis
+
+from sklearn.experimental import enable_iterative_imputer
+from sklearn.impute import IterativeImputer
+
+# Filter down to balls put in play that should have values.
+df_train = df_subset[df_subset['description'] == 'hit_into_play'].copy()
+
+numeric_cols = ['launch_speed', 'launch_angle']
+df_numeric = df_train[numeric_cols]
+
+# Impute missing data using predictive mean matching
+imputer = IterativeImputer(random_state=42, max_iter=10)
+imputed_data = imputer.fit_transform(df_numeric)
+
+df_imputed = pd.DataFrame(imputed_data, columns=numeric_cols, index=df_train.index)
+
+df_final = pd.concat([df_train[['player_name', 'description']], df_imputed], axis=1)
+
+print(df_final.head(20).to_markdown(index=False))
+```
+
+:::
+
+# Cautionary tales in working with data
+
+## Data drift {.smaller}
+
+Changes in the data can happen over time, resulting in "data drift" that can impact model performance or other decisions that can be overlooked if only near term changes are considered.
+
+![](https://images.datacamp.com/image/upload/v1673459876/Concept_Drift_b16df50c98.png){fig-alt="Four different types of data drift described visually." fig-align="center"}
+
+::: aside
+Image taken from [DataCamp](https://www.datacamp.com/tutorial/understanding-data-drift-model-drift).
+:::
+
+## Cognitive biases 
+
+Cognitive biases are systematic patterns of deviation from norm and/or rationality in judgment. They are often studied in psychology, sociology and behavioral economics.^[Haselton MG, Nettle D, Andrews PW (2005). "The evolution of cognitive bias" (PDF). In Buss DM (ed.). The Handbook of Evolutionary Psychology. Hoboken, NJ: John Wiley & Sons Inc. pp. 724–746.]
+
+Some biases to be aware of:
+
+- **Survivorship bias**: Analyzing just the data that is available without analyzing the larger situation.
+- **False causality**: Seeing correlation between two variables does not imply one causes the other to occur.^[Something fun to explore: [Spurious correlations](https://www.tylervigen.com/spurious-correlations)]
+- **Availability bias**: Drawing conclusions on limited data. 
+- **Confirmation bias**: Manipulating data to confirm your own hypothesis. 
+
+## Simpson's paradox 
+
+Simpson's paradox occurs when groups of data show one particular trend, but this trend is reversed when the groups are combined together. Understanding and identifying this paradox is important for correctly interpreting data.^[Simpson, Edward H. (1951). "The Interpretation of Interaction in Contingency Tables". Journal of the Royal Statistical Society, Series B. 13: 238–241.]
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+<br>
+
+A baseball player can have higher batting average than another on each of two years, but lower than the other when the two are combined. In one case, David Justice had a higher batting average than Derek Jeter in 1995 and 1996, but across the two years, Jeter's average was higher.^[[Simpon's Paradox by Brilliant](https://brilliant.org/wiki/simpsons-paradox)]
+
+:::
+
+::: {.column width="50%" layout-valign="top"}
+
+![](https://miro.medium.com/v2/resize:fit:1400/1*HDi8HuaVrumdFP-W9e4PtA.png){fig-alt="Picture explaining Simpson's paradox." fig-align="center" width="70%"}
+
+:::
+
+::::
+
+## Goodhart's law 
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+_Any observed statistical regularity will tend to collapse once pressure is placed upon it for control purposes._^[Goodhart, Charles (1975). "Problems of Monetary Management: The U.K. Experience". In Courakis, Anthony S. (ed.). Inflation, Depression, and Economic Policy in the West. Totowa, New Jersey: Barnes and Noble Books (published 1981). p. 116. ISBN 0-389-20144-8.]
+
+<br>
+
+or a better way of putting it is: 
+
+<br>
+
+**When a measure becomes a target, it ceases to be a good measure.**^[Strathern, Marilyn (1997). "'Improving ratings': audit in the British University system". European Review. John Wiley & Sons. 5 (3): 305–321.]
+
+:::
+
+::: {.column width="50%"}
+
+![](https://images.prismic.io/sketchplanations/6336f4c3-4c89-41f6-998f-ac595fb33a66_167369765942.jpg?auto=compress%2Cformat&fit=max&w=3840&q=50){fig-align="center" fig-alt="Sketchplanations cartoon explaining Goodhart's Law" width="75%"}
+
+:::
+
+::::
+
+# Sharing your data with others
+
+## Reproducibility 
+
+:::: {.columns}
+
+::: {.column width="75%"}
+Reproducibility is the ability of independent investigators to draw the same conclusions from an experiment by following the documentation shared by the original investigators.^[Gundersen Odd Erik. 2021. The fundamental principles of reproducibility. _Phil. Trans. R. Soc. A._ 379: 20200210. http://doi.org/10.1098/rsta.2020.0210]
+
+Easy tips for enabling others to reproduce your work:
+
+:::: {.columns id="small-bullets"}
+
+::: {.column width="50%"}
+
+- Use a static random seed
+  - in R: `set.seed(42)`
+  - in Python: `random.seed(42)`
+- Document your environment
+  - in R: `library(renv)`
+  - in Python: `pip freeze > requirements.txt`
+
+:::
+
+::: {.column width="40%"}
+
+- Use version control (e.g., Github, Bitbucket)
+- Use notebooks
+  - in R: [R Markdown](https://rmarkdown.rstudio.com/)
+  - in Python: [Jupyter](https://jupyter.org/)
+  - in either: [Quarto](https://quarto.org/)
+
+:::
+
+::::
+
+:::
+
+::: {.column width="25%"}
+![](https://imgs.xkcd.com/comics/the_difference.png){fig-align="center" width="80%"}^[[xkcd 242](https://xkcd.com/242/)]
+:::
+
+::::
+
+## Using pins
+
+The pins package publishes data, models, and other R objects, making it easy to share them across projects and with your colleagues. You can pin objects to a variety of pin boards, including:
+
+- folders (to share on a networked drive or with services like DropBox)
+- Posit Connect
+- Amazon S3
+- Google Cloud Storage
+- Azure storage
+- Microsoft 365 (OneDrive and SharePoint). 
+
+Pins can be automatically versioned, making it straightforward to track changes, re-run analyses on historical data, and undo mistakes.^[https://pins.rstudio.com/] Pins is available in [R](https://pins.rstudio.com/) and [Python](https://rstudio.github.io/pins-python/).
+
+# How might AI start to impact working with messy data?
+
+## Shifting from manual scripting to "ambient" analysis
+
+Historically, Exploratory Data Analysis (EDA) required a context switch: writing code to see what the data looked like. Tools like Databot represents a shift toward Ambient EDA, where the data’s profile is always visible alongside the code.
+
+::: {.incremental id="small-bullets"}
+**Key Concepts for the Future of Data Quality** 
+
+- **Zero-Latency Profiling:** Instead of "Ask and Wait," Databot provides "Always-On" insights. The moment a dataframe is created or modified, quality metrics (distributions, missing values, and types) are updated instantly.
+- **The "Sidecar" UI Pattern:** The future of data science IDEs is moving toward a hybrid approach: using the console for transformation and a dedicated, persistent UI for observation.
+- **Integrated Data Health Monitoring:** Future tools will likely treat data quality as a "linter" for datasets. Just as code editors highlight syntax errors, Databot highlights "data errors" as you work.
+- **Language-Agnostic Exploration:** Databot works across Python and R, pointing to a future where EDA tools are tied to the environment rather than specific language libraries, ensuring a consistent quality-check workflow regardless of the stack.
+
+:::
+
+## Discussion / Contact Info
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+<br><br>
+
+::: {id="credit"}
+
+### Christopher Teixeira {.name}
+
+[christopherteixeira.com](https://www.christopherteixeira.com)
+
+:::
+
+<br><br>
+
+[{{< fa envelope size=xl >}} chris@christopherteixeira.com](mailto:chris@christopherteixeira.com)
+
+[{{< fa brands linkedin size=xl >}} in/christopherteixeira](https://www.linkedin.com/in/christopherteixeira/)
+
+[{{< fa brands github size=xl >}} christopher-teixeira](https://github.com/christopher-teixeira)
+
+:::
+
+::: {.column width="60%"}
+
+![](https://imgs.xkcd.com/comics/flawed_data.png){fig-align="center"}
+
+:::
+
+::::
+
+::: aside
+[xkcd 2494](https://xkcd.com/2494/)
+:::
+
