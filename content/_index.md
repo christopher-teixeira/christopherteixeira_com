@@ -9,14 +9,14 @@ design:
   spacing: "2rem"
 
 sections:
-  - block: resume-biography
+  - block: resume-biography-3
     content:
       username: me
       text: ''
       headings:
-        about: ''
-        education: ''
-        interests: ''
+        about: 'Professional Summary'
+        education: 'Academic Background'
+        interests: 'Data Science Interests'
     design:
       background:
         gradient_mesh:
@@ -24,14 +24,14 @@ sections:
       name:
         size: md # Options: xs, sm, md, lg (default), xl
       avatar:
-        size: medium # Options: small (150px), medium (200px, default), large (320px), xl (400px), xxl (500px)
+        size: large # Options: small (150px), medium (200px, default), large (320px), xl (400px), xxl (500px)
         shape: circle # Options: circle (default), square, rounded
 
   - block: tech-stack
     id: skills
     content:
       title: "Tech Stack"
-      subtitle: "Technologies I use to build things"
+      subtitle: "My preferred technology stack for data science projects."
       categories: 
         - name: "Programming Languages"
           items: 
