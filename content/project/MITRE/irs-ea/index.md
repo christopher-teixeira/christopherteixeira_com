@@ -1,8 +1,8 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "Transitioning evolutionary algorithm technology to Internal Revenue Service Enterprise"
-summary: "Support IRS staff with understanding evolutionary algorithms and adapting them for use within their environment."
+title: "Transitioning evolutionary algorithm technology to a federal government agency"
+summary: "Support federal agency staff with understanding evolutionary algorithms and adapting them for use within their environment."
 authors: 
   - me
 tags: 
@@ -45,4 +45,4 @@ image:
 slides: ""
 ---
 
-Lead engagements with a team of data scientists at IRS to help them understand and utilize a code base using evolutionary algorithms. Met regularly with IRS leadership to demonstrate progress in transition. Provided expertise in working with Jupyter notebooks, general python programming, collaboration using Github, and using simulation techniques. 
+Lead engagements with a team of data scientists at a federal agency to help them understand and utilize a code base using evolutionary algorithms. Met regularly with a federal agency leadership to demonstrate progress in transition. Provided expertise in working with Jupyter notebooks, general python programming, collaboration using Github, and using simulation techniques. 
