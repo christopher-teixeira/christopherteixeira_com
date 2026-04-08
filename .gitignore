@@ -68,3 +68,6 @@ Desktop.ini
 *.log
 npm-debug.log*
 .Rproj.user
+
+# hugo mod vendor directory
+_vendor/
